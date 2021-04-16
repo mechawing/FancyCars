@@ -32,7 +32,7 @@ object FancyCarDBClient {
             INSTANCE = temp
            temp
         }
-//            .create(FancyCarDBInterface::class.java)
+
     }
     //this will return the service I want
     fun<T> getService(service: Class<T>): T{

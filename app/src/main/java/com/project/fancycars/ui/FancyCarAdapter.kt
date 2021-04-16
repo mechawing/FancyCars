@@ -6,17 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.annotation.LayoutRes
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.project.fancycars.R
 import com.project.fancycars.data.model.FancyCarDetails
 import kotlinx.android.synthetic.main.fancy_car_row_layout.view.*
 
-class FancyCarAdapter(
-        val context: Context
-//CarAvailabilityClick
-) : RecyclerView.Adapter<FancyCarDetailsViewHolder>()  {
+class FancyCarAdapter : RecyclerView.Adapter<FancyCarDetailsViewHolder>() {
 
     var fancyCarDetailsList: List<FancyCarDetails> = emptyList()
         set(value) {
@@ -28,16 +25,21 @@ class FancyCarAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FancyCarDetailsViewHolder {
         val view = LayoutInflater.from(parent.context)
-                .inflate(R.layout.fancy_car_row_layout, parent, false)
+            .inflate(R.layout.fancy_car_row_layout, parent, false)
         return FancyCarDetailsViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: FancyCarDetailsViewHolder, position: Int) {
         val currentFancyCarDetail = fancyCarDetailsList[position]
-        holder.carMake.text = currentFancyCarDetail.make
-        Glide.with(context)
-                .load(currentFancyCarDetail.img)
-                .into(holder.carImage)
+        holder.view.car_make.text = currentFancyCarDetail.make
+        holder.view.car_year.text = "Release Year: ${currentFancyCarDetail.year}"
+        holder.view.car_model.text = currentFancyCarDetail.model
+
+        Glide.with(holder.view.context)
+            .applyDefaultRequestOptions(RequestOptions.centerCropTransform())
+            .load(currentFancyCarDetail.img)
+            .placeholder(R.drawable.ic_car)
+            .into(holder.view.car_image)
     }
 
     override fun getItemCount(): Int {
@@ -45,14 +47,4 @@ class FancyCarAdapter(
     }
 }
 
-class FancyCarDetailsViewHolder(val view: View): RecyclerView.ViewHolder(view) {
-    var carMake: TextView
-    var carImage: ImageView
-    //i would have to connect the databinded layout to this viewholder if i did databinding later
-
-    init {
-        carMake = view.findViewById(R.id.car_make)
-        carImage = view.findViewById(R.id.car_image)
-    }
-
-}
+class FancyCarDetailsViewHolder(val view: View) : RecyclerView.ViewHolder(view)

@@ -1,0 +1,18 @@
+[ 
+	{
+		"id": 1,
+		"img": "https://www.pngitem.com/pimgs/m/241-2412352_maserati-levante-maserati-ghibli-hd-png-download.png",
+ 		"name": "Maseratti",
+		"make": "Levante", 
+		"model": "2021", 
+		"year": 2019
+	},
+{
+		"id": 2,
+		"img": "https://www.pngitem.com/pimgs/m/241-2412352_maserati-levante-maserati-ghibli-hd-png-download.png",
+ 		"name": "Mercedes Benz", 
+		"make": "CLA", 
+		"model": "2020", 
+		"year": 2020
+	}
+]
