@@ -22,4 +22,6 @@ class FancyCarRepository () {
         return fancyCarNetworkDataSource.networkState
     }
 
+    //fetchFAncyCarAvailtiy(id: sTring)
+
 }

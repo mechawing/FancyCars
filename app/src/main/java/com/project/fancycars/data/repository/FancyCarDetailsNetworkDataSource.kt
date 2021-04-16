@@ -54,5 +54,7 @@ class FancyCarNetworkDataSource (private val compositeDisposable: CompositeDispo
 
     }
 
+    //fetchCarAvailability(id: String)
+
     //TODO: Database setup and call to make app work offline
 }

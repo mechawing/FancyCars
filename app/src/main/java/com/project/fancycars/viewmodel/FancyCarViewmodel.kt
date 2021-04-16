@@ -21,6 +21,8 @@ class FancyCarViewmodel() : ViewModel() {
         fancyCarRepository.getFancyCarNetworkState()
     }
 
+//    val fancyCarAvailability :
+
     override fun onCleared() {
         super.onCleared()
         compositeDisposable.dispose()

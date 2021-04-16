@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">FancyCars</string>
+    <string name="image_of_car">image of car</string>
 </resources>
