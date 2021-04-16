@@ -15,7 +15,6 @@ class FancyCarRepository () {
         fancyCarNetworkDataSource.fetchFancyCarDetails()
 
         return fancyCarNetworkDataSource.downloadedFancyCarResponse
-
     }
 
     fun getFancyCarNetworkState(): LiveData<NetworkState> {

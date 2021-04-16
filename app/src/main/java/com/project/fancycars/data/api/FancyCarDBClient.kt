@@ -30,7 +30,7 @@ object FancyCarDBClient {
                     .addConverterFactory(GsonConverterFactory.create())
                     .build()
             INSTANCE = temp
-            temp
+           temp
         }
 //            .create(FancyCarDBInterface::class.java)
     }

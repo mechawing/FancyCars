@@ -1,5 +1,6 @@
 package com.project.fancycars.ui.fancycar_list
 
+import android.icu.lang.UCharacter
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -31,9 +32,7 @@ class MainActivity : AppCompatActivity() {
             //set list adapter here
             fancy_car_recycler_view.apply {
                 adapter = FancyCarAdapter(this.context)
-                layoutManager = LinearLayoutManager(this.context,
-                    RecyclerView.VERTICAL,
-                    false)
+
             }
 
 //            fancyCarDetailViewmodel.fancyCarAvailability.observe
